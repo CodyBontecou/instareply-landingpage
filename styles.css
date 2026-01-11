@@ -16,9 +16,9 @@
     --text-muted: #8A8A8A;
     --text-inverse: #F5F5F0;
 
-    --accent: #CDFF00;
-    --accent-hover: #B8E600;
-    --accent-muted: rgba(205, 255, 0, 0.15);
+    --accent: #808080;
+    --accent-hover: #606060;
+    --accent-muted: rgba(128, 128, 128, 0.15);
 
     --border: #D0D0CB;
     --border-dark: #2A2A2A;
@@ -50,7 +50,7 @@
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
     --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
     --shadow-lg: 0 12px 32px rgba(0,0,0,0.12);
-    --shadow-glow: 0 0 40px rgba(205, 255, 0, 0.3);
+    --shadow-glow: 0 0 40px rgba(128, 128, 128, 0.3);
 }
 
 /* Reset & Base */
@@ -578,22 +578,46 @@ body:hover .cursor-glow {
     display: flex;
     align-items: center;
     gap: 6px;
-    background: var(--accent);
-    border: none;
-    border-radius: 14px;
-    padding: 6px 14px;
+    background: linear-gradient(135deg, #9A9A9A 0%, #707070 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    padding: 7px 16px;
     cursor: pointer;
-    font-family: var(--font-sans);
-    font-size: 13px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', var(--font-sans);
+    font-size: 14px;
     font-weight: 600;
-    color: var(--bg-dark);
-    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    color: #fff;
+    box-shadow:
+        0 2px 4px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.2),
+        inset 0 -1px 0 rgba(0,0,0,0.1);
     transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.generate-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
+    transition: left 0.5s ease;
+}
+
+.generate-btn:hover::before {
+    left: 100%;
 }
 
 .generate-btn:hover {
-    background: var(--accent-hover);
+    background: linear-gradient(135deg, #8A8A8A 0%, #606060 100%);
     transform: scale(1.02);
+    box-shadow:
+        0 3px 6px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.25),
+        inset 0 -1px 0 rgba(0,0,0,0.15);
 }
 
 .generate-btn.pulse {
@@ -601,7 +625,14 @@ body:hover .cursor-glow {
 }
 
 .generate-icon {
-    font-size: 12px;
+    font-size: 14px;
+    filter: brightness(1.2);
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+    50% { opacity: 0.8; transform: scale(1.1) rotate(10deg); }
 }
 
 @keyframes spin {
@@ -611,7 +642,7 @@ body:hover .cursor-glow {
 
 @keyframes pulse-glow {
     0% { box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
-    50% { box-shadow: 0 0 12px rgba(205, 255, 0, 0.6); }
+    50% { box-shadow: 0 0 12px rgba(128, 128, 128, 0.6); }
     100% { box-shadow: 0 1px 3px rgba(0,0,0,0.15); }
 }
 
@@ -1382,7 +1413,7 @@ body:hover .cursor-glow {
     bottom: 0;
     background:
         radial-gradient(circle at 30% 50%, var(--accent-muted) 0%, transparent 50%),
-        radial-gradient(circle at 70% 50%, rgba(205, 255, 0, 0.05) 0%, transparent 40%);
+        radial-gradient(circle at 70% 50%, rgba(128, 128, 128, 0.05) 0%, transparent 40%);
     pointer-events: none;
 }
 
@@ -1449,7 +1480,7 @@ body:hover .cursor-glow {
     color: var(--bg-dark);
     padding: var(--space-sm) var(--space-md);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(205, 255, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(128, 128, 128, 0.3);
     animation: floatKey 4s ease-in-out infinite;
     animation-delay: var(--delay);
     transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y)));
