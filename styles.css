@@ -441,7 +441,7 @@ body:hover .cursor-glow {
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 60px 16px 16px;
+    padding: 60px 0 0;
     background: linear-gradient(180deg, #f8f8f8 0%, #fff 100%);
 }
 
@@ -449,7 +449,7 @@ body:hover .cursor-glow {
     background: var(--bg-secondary);
     border-radius: 16px 16px 16px 4px;
     padding: 12px 16px;
-    margin-bottom: 16px;
+    margin: 0 16px 16px 16px;
     max-width: 85%;
 }
 
@@ -477,7 +477,7 @@ body:hover .cursor-glow {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 6px 8px;
+    padding: 6px 3px;
     background: #C9CBCF;
     border-bottom: 1px solid #B8BABF;
 }
@@ -485,47 +485,47 @@ body:hover .cursor-glow {
 .profile-selector {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
     background: #fff;
     border: none;
-    border-radius: 6px;
-    padding: 4px 8px;
+    border-radius: 14px;
+    padding: 4px 10px 4px 6px;
     cursor: pointer;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 500;
+    color: #000;
     box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
 
 .profile-avatar {
-    width: 18px;
-    height: 18px;
     background: var(--accent);
     border-radius: 50%;
-    display: flex;
+    padding: 3px 6px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 8px;
-    font-weight: 700;
+    font-size: 11px;
+    font-weight: 600;
     color: var(--bg-dark);
 }
 
 .profile-dropdown {
-    font-size: 8px;
-    color: var(--text-muted);
+    font-size: 10px;
+    color: #666;
+    margin-left: 2px;
 }
 
 .generate-btn {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     background: var(--accent);
     border: none;
-    border-radius: 6px;
-    padding: 5px 10px;
+    border-radius: 14px;
+    padding: 6px 14px;
     cursor: pointer;
     font-family: var(--font-sans);
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--bg-dark);
     box-shadow: 0 1px 3px rgba(0,0,0,0.15);
@@ -557,20 +557,22 @@ body:hover .cursor-glow {
 }
 
 .ios-keyboard {
-    padding: 8px 3px 4px;
+    padding: 8px 0 8px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
 }
 
 .keyboard-row {
     display: flex;
-    justify-content: center;
-    gap: 4px;
+    justify-content: space-between;
+    gap: 2px;
+    padding: 0 2px;
 }
 
 .keyboard-row .key {
-    min-width: 22px;
+    flex: 1;
+    min-width: 20px;
     height: 32px;
     background: #fff;
     border: none;
@@ -593,32 +595,31 @@ body:hover .cursor-glow {
 
 .keyboard-row .key-shift,
 .keyboard-row .key-delete {
-    min-width: 32px;
+    flex: 1.5;
     background: #AEB3BC;
     color: #000;
     font-size: 13px;
 }
 
 .keyboard-row .key-special {
-    min-width: 32px;
+    flex: 1.5;
     background: #AEB3BC;
     font-size: 10px;
     font-weight: 500;
 }
 
 .keyboard-row .key-globe {
-    min-width: 28px;
+    flex: 1;
     font-size: 12px;
 }
 
 .keyboard-row .key-space {
-    flex: 1;
-    max-width: 120px;
+    flex: 4;
     background: #fff;
 }
 
 .keyboard-row .key-return {
-    min-width: 60px;
+    flex: 2;
     background: #AEB3BC;
     font-size: 10px;
     font-weight: 500;
