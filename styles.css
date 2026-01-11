@@ -187,6 +187,65 @@ body:hover .cursor-glow {
     overflow: hidden;
 }
 
+/* Agency Badge in Hero */
+.agency-badge {
+    position: absolute;
+    top: calc(var(--nav-height) + var(--space-lg));
+    right: var(--space-lg);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 100px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all var(--transition-fast);
+    z-index: 10;
+    animation: slideInRight 0.6s ease-out 0.8s backwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.agency-badge:hover {
+    transform: translateX(-2px);
+}
+
+.badge-text {
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.badge-name {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.badge-arrow {
+    opacity: 0.5;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.agency-badge:hover .badge-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -1479,6 +1538,83 @@ body:hover .cursor-glow {
     font-family: var(--font-mono);
 }
 
+/* Agency Credit */
+.agency-credit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    animation: fadeInUp 0.8s ease-out 0.5s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.credit-text {
+    color: rgba(255,255,255,0.4);
+}
+
+.agency-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--accent);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    padding: 2px 6px;
+    margin: 0 2px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.agency-link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    opacity: 0;
+    border-radius: 4px;
+    transition: opacity var(--transition-fast);
+}
+
+.agency-link:hover {
+    color: var(--bg-darker);
+}
+
+.agency-link:hover::before {
+    opacity: 1;
+}
+
+.agency-name {
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+.agency-arrow {
+    position: relative;
+    z-index: 1;
+    transition: transform var(--transition-fast);
+}
+
+.agency-link:hover .agency-arrow {
+    transform: translate(2px, -2px);
+}
+
+.credit-tagline {
+    color: rgba(255,255,255,0.25);
+    font-size: 12px;
+}
+
 /* ==========================================================================
    Responsive
    ========================================================================== */
@@ -1552,6 +1688,13 @@ body:hover .cursor-glow {
         padding-top: calc(var(--nav-height) + var(--space-2xl));
     }
 
+    .agency-badge {
+        position: static;
+        margin: 0 auto var(--space-lg);
+        display: inline-flex;
+        animation: fadeInUp 0.6s ease-out 0.4s backwards;
+    }
+
     .hero-actions {
         flex-direction: column;
     }
@@ -1588,6 +1731,18 @@ body:hover .cursor-glow {
         flex-direction: column;
         gap: var(--space-sm);
         text-align: center;
+    }
+
+    .agency-credit {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .credit-tagline {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 4px;
     }
 }
 
