@@ -167,10 +167,9 @@ function initPhoneDemo() {
 
     // Function to add generated message to chat
     function addGeneratedMessage(responses) {
-        const appDemo = document.querySelector('.app-demo');
-        const keyboardArea = document.querySelector('.keyboard-area');
+        const messagesContainer = document.querySelector('.messages-container');
 
-        if (!appDemo || !keyboardArea) return;
+        if (!messagesContainer) return;
 
         // Get a random response
         const randomResponse = responses[Math.floor(Math.random() * responses.length)];
@@ -183,7 +182,7 @@ function initPhoneDemo() {
             color: white;
             padding: 8px 12px;
             border-radius: 18px;
-            margin: 4px 12px;
+            margin: 4px 12px 12px;
             max-width: 70%;
             align-self: flex-end;
             margin-left: auto;
@@ -200,19 +199,19 @@ function initPhoneDemo() {
         messageText.textContent = randomResponse;
         messageBubble.appendChild(messageText);
 
-        // Insert the message before the keyboard area
-        appDemo.insertBefore(messageBubble, keyboardArea);
+        // Add the message to the messages container
+        messagesContainer.appendChild(messageBubble);
 
-        // Scroll to show the new message if needed
-        const phoneScreen = document.querySelector('.phone-screen');
-        if (phoneScreen) {
-            setTimeout(() => {
-                phoneScreen.scrollTop = phoneScreen.scrollHeight;
-            }, 100);
-        }
+        // Smooth scroll to show the new message
+        setTimeout(() => {
+            messagesContainer.scrollTo({
+                top: messagesContainer.scrollHeight,
+                behavior: 'smooth'
+            });
+        }, 100);
 
         // Remove oldest message if there are too many (keep it clean)
-        const allBubbles = appDemo.querySelectorAll('.comment-bubble.outgoing');
+        const allBubbles = messagesContainer.querySelectorAll('.comment-bubble.outgoing');
         if (allBubbles.length > 3) {
             allBubbles[0].style.animation = 'fadeOut 0.3s ease';
             setTimeout(() => {
