@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>instarep.ly — Instant Replies for Creators</title>
+    <meta name="description" content="The custom iOS keyboard that helps UGC creators respond to hundreds of comments instantly. Keep your content alive on TikTok, Instagram, and beyond.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Cursor follower -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#" class="logo">
+                <span class="logo-bracket">[</span>instarep.ly<span class="logo-bracket">]</span>
+            </a>
+            <div class="nav-links">
+                <a href="#how-it-works">How It Works</a>
+                <a href="#features">Features</a>
+                <a href="#download" class="nav-cta">Get the App</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="tag-key">⌨</span>
+                    <span>iOS Custom Keyboard</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">Reply to</span>
+                    <span class="title-line accent">hundreds</span>
+                    <span class="title-line">in seconds.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    The keyboard built for UGC creators. Generate contextual responses from your clipboard instantly. Keep your TikTok comments alive without the burnout.
+                </p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">
+                        <span class="btn-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                        </span>
+                        <span>Download on App Store</span>
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">10x</span>
+                        <span class="stat-label">Faster replies</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value">500+</span>
+                        <span class="stat-label">Comments/hour</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value">∞</span>
+                        <span class="stat-label">Creativity</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <div class="app-demo">
+                                <div class="comment-bubble incoming">
+                                    <span class="comment-user">@tiktokfan2024</span>
+                                    <span class="comment-text">omg where did you get that outfit?? 😍</span>
+                                </div>
+                                <div class="keyboard-area">
+                                    <div class="keyboard-toolbar">
+                                        <button class="profile-selector">
+                                            <span class="profile-avatar">JM</span>
+                                            <span class="profile-dropdown">▾</span>
+                                        </button>
+                                        <button class="generate-btn">
+                                            <span class="generate-icon">✨</span>
+                                            <span>Generate</span>
+                                        </button>
+                                    </div>
+                                    <div class="ios-keyboard">
+                                        <div class="keyboard-row">
+                                            <span class="key">Q</span>
+                                            <span class="key">W</span>
+                                            <span class="key">E</span>
+                                            <span class="key">R</span>
+                                            <span class="key">T</span>
+                                            <span class="key">Y</span>
+                                            <span class="key">U</span>
+                                            <span class="key">I</span>
+                                            <span class="key">O</span>
+                                            <span class="key">P</span>
+                                        </div>
+                                        <div class="keyboard-row">
+                                            <span class="key">A</span>
+                                            <span class="key">S</span>
+                                            <span class="key">D</span>
+                                            <span class="key">F</span>
+                                            <span class="key">G</span>
+                                            <span class="key">H</span>
+                                            <span class="key">J</span>
+                                            <span class="key">K</span>
+                                            <span class="key">L</span>
+                                        </div>
+                                        <div class="keyboard-row">
+                                            <span class="key key-shift">⇧</span>
+                                            <span class="key">Z</span>
+                                            <span class="key">X</span>
+                                            <span class="key">C</span>
+                                            <span class="key">V</span>
+                                            <span class="key">B</span>
+                                            <span class="key">N</span>
+                                            <span class="key">M</span>
+                                            <span class="key key-delete">⌫</span>
+                                        </div>
+                                        <div class="keyboard-row keyboard-bottom">
+                                            <span class="key key-special">123</span>
+                                            <span class="key key-globe">🌐</span>
+                                            <span class="key key-space"></span>
+                                            <span class="key key-return">return</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="phone-reflection"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow">↓</div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-header">
+            <span class="section-tag">[01]</span>
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Three steps. Infinite replies. Zero burnout.</p>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step" data-step="01">
+                <div class="step-visual">
+                    <div class="step-icon">
+                        <div class="icon-clipboard">
+                            <div class="clipboard-board"></div>
+                            <div class="clipboard-lines">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">01</span>
+                    <h3 class="step-title">Copy the comment</h3>
+                    <p class="step-desc">Long-press any comment on TikTok, Instagram, or YouTube. Copy it to your clipboard like you normally would.</p>
+                </div>
+            </div>
+
+            <div class="step" data-step="02">
+                <div class="step-visual">
+                    <div class="step-icon">
+                        <div class="icon-keyboard">
+                            <div class="key-row">
+                                <span class="mini-key"></span>
+                                <span class="mini-key active"></span>
+                                <span class="mini-key"></span>
+                            </div>
+                            <div class="key-row">
+                                <span class="mini-key"></span>
+                                <span class="mini-key"></span>
+                                <span class="mini-key"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">02</span>
+                    <h3 class="step-title">Open instarep.ly keyboard</h3>
+                    <p class="step-desc">Switch to the instarep.ly keyboard. It automatically reads your clipboard and generates contextual, on-brand responses.</p>
+                </div>
+            </div>
+
+            <div class="step" data-step="03">
+                <div class="step-visual">
+                    <div class="step-icon">
+                        <div class="icon-send">
+                            <div class="send-arrow">
+                                <span class="arrow-line"></span>
+                                <span class="arrow-head"></span>
+                            </div>
+                            <div class="send-rings">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">03</span>
+                    <h3 class="step-title">Tap & reply</h3>
+                    <p class="step-desc">Pick your favorite response with one tap. It's instantly typed out and ready to send. Move on to the next comment.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="workflow-visual">
+            <div class="workflow-line"></div>
+            <div class="workflow-nodes">
+                <div class="node node-copy">Copy</div>
+                <div class="node node-generate">Generate</div>
+                <div class="node node-send">Send</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <span class="section-tag">[02]</span>
+            <h2 class="section-title">Built for Creators</h2>
+            <p class="section-subtitle">Every feature designed around the UGC workflow.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card feature-large">
+                <div class="feature-icon">
+                    <span class="icon-char">⚡</span>
+                </div>
+                <h3 class="feature-title">Lightning Fast</h3>
+                <p class="feature-desc">Responses generate in under 200ms. No loading screens. No waiting. Just instant replies that keep up with your pace.</p>
+                <div class="feature-metric">
+                    <span class="metric-value">&lt;200</span>
+                    <span class="metric-unit">ms</span>
+                </div>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span class="icon-char">🎨</span>
+                </div>
+                <h3 class="feature-title">On-Brand Voice</h3>
+                <p class="feature-desc">Train it with your style. Casual, professional, chaotic, or anything in between.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span class="icon-char">🔒</span>
+                </div>
+                <h3 class="feature-title">Privacy First</h3>
+                <p class="feature-desc">Your clipboard data never leaves your device. We don't store, track, or sell anything.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span class="icon-char">😊</span>
+                </div>
+                <h3 class="feature-title">Emoji Intelligence</h3>
+                <p class="feature-desc">Automatically matches the energy of the comment. Hype responses for hype comments.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <span class="icon-char">🌍</span>
+                </div>
+                <h3 class="feature-title">Multi-Language</h3>
+                <p class="feature-desc">Reply in the same language as the comment. Automatic detection, no setup required.</p>
+            </div>
+
+            <div class="feature-card feature-wide">
+                <div class="feature-content">
+                    <div class="feature-icon">
+                        <span class="icon-char">📊</span>
+                    </div>
+                    <h3 class="feature-title">Engagement Analytics</h3>
+                    <p class="feature-desc">Track your response rate, time saved, and engagement patterns. See which response styles perform best.</p>
+                </div>
+                <div class="feature-chart">
+                    <div class="chart-bars">
+                        <div class="bar" style="--height: 40%"><span>Mon</span></div>
+                        <div class="bar" style="--height: 65%"><span>Tue</span></div>
+                        <div class="bar" style="--height: 85%"><span>Wed</span></div>
+                        <div class="bar" style="--height: 55%"><span>Thu</span></div>
+                        <div class="bar" style="--height: 90%"><span>Fri</span></div>
+                        <div class="bar" style="--height: 75%"><span>Sat</span></div>
+                        <div class="bar" style="--height: 60%"><span>Sun</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial / Social Proof -->
+    <section class="social-proof">
+        <div class="proof-inner">
+            <div class="quote-mark">"</div>
+            <blockquote class="testimonial">
+                I used to spend 2 hours every night replying to comments. Now I do it in 15 minutes while waiting for my coffee.
+            </blockquote>
+            <div class="testimonial-author">
+                <div class="author-avatar">
+                    <span>JM</span>
+                </div>
+                <div class="author-info">
+                    <span class="author-name">@jessicamakes</span>
+                    <span class="author-stats">1.2M followers • Lifestyle Creator</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Guide -->
+    <section class="setup-guide" id="setup">
+        <div class="section-header">
+            <span class="section-tag">[03]</span>
+            <h2 class="section-title">Quick Setup</h2>
+            <p class="section-subtitle">Get started in under 60 seconds.</p>
+        </div>
+
+        <div class="setup-steps">
+            <div class="setup-step">
+                <div class="setup-number">1</div>
+                <div class="setup-content">
+                    <h4>Download the app</h4>
+                    <p>Get instarep.ly from the App Store. It's free to download.</p>
+                </div>
+            </div>
+            <div class="setup-connector"></div>
+            <div class="setup-step">
+                <div class="setup-number">2</div>
+                <div class="setup-content">
+                    <h4>Enable the keyboard</h4>
+                    <p>Settings → General → Keyboard → Keyboards → Add New Keyboard → instarep.ly</p>
+                    <div class="setup-path">
+                        <code>Settings</code>
+                        <span>→</span>
+                        <code>General</code>
+                        <span>→</span>
+                        <code>Keyboard</code>
+                        <span>→</span>
+                        <code>Add New</code>
+                    </div>
+                </div>
+            </div>
+            <div class="setup-connector"></div>
+            <div class="setup-step">
+                <div class="setup-number">3</div>
+                <div class="setup-content">
+                    <h4>Allow full access</h4>
+                    <p>This lets the keyboard read your clipboard. Your data stays on-device.</p>
+                </div>
+            </div>
+            <div class="setup-connector"></div>
+            <div class="setup-step">
+                <div class="setup-number">4</div>
+                <div class="setup-content">
+                    <h4>Start replying!</h4>
+                    <p>Switch keyboards with the globe icon. Copy a comment and watch the magic happen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="download">
+        <div class="cta-inner">
+            <div class="cta-content">
+                <h2 class="cta-title">
+                    <span class="cta-line">Stop typing.</span>
+                    <span class="cta-line">Start creating.</span>
+                </h2>
+                <p class="cta-subtitle">Join thousands of creators who've reclaimed their time.</p>
+                <a href="https://apps.apple.com" class="btn btn-primary btn-large">
+                    <span class="btn-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg>
+                    </span>
+                    <span class="btn-text">
+                        <span class="btn-small">Download on the</span>
+                        <span class="btn-main">App Store</span>
+                    </span>
+                </a>
+            </div>
+            <div class="cta-keyboard">
+                <div class="floating-keys">
+                    <span class="floating-key" style="--delay: 0s; --x: -20px; --y: -30px;">Reply</span>
+                    <span class="floating-key" style="--delay: 0.5s; --x: 40px; --y: -50px;">💕</span>
+                    <span class="floating-key" style="--delay: 1s; --x: -50px; --y: 20px;">Thanks!</span>
+                    <span class="floating-key" style="--delay: 1.5s; --x: 60px; --y: 10px;">🎬</span>
+                    <span class="floating-key" style="--delay: 2s; --x: 0px; --y: 40px;">Send</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo">
+                    <span class="logo-bracket">[</span>instarep.ly<span class="logo-bracket">]</span>
+                </span>
+                <p class="footer-tagline">Instant replies for creators.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h5>Product</h5>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#setup">Setup Guide</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Legal</h5>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <a href="https://twitter.com/instarely">Twitter</a>
+                    <a href="https://tiktok.com/@instarely">TikTok</a>
+                    <a href="mailto:hello@instarep.ly">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 instarep.ly</span>
+            <span class="footer-made">Made with ⌨️ for creators</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
