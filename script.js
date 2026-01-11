@@ -105,7 +105,19 @@ function initPhoneDemo() {
     const keys = document.querySelectorAll('.ios-keyboard .key');
     const profileSelector = document.querySelector('.profile-selector');
 
-    // Generate button click animation
+    // Array of possible responses
+    const responses = [
+        "Thanks so much! 💕 It's from @fashionbrand - link in bio! ✨",
+        "Aww you're so sweet! 🥰 Check my latest haul video for details!",
+        "Thank you babe! Got it from my fave store - swipe up for the link! 💗",
+        "Omg thanks! 😍 All outfit details are in my LTK!",
+        "You're the best! 💖 It's tagged in the video - tap the shopping bag!",
+        "Love you! 🤗 Full outfit breakdown coming tomorrow!",
+        "Thanks hun! ✨ Use code CREATOR20 for a discount!",
+        "So glad you like it! 💕 Check my stories for the try-on haul!"
+    ];
+
+    // Generate button click animation and add message
     if (generateBtn) {
         generateBtn.addEventListener('click', () => {
             generateBtn.style.transform = 'scale(0.95)';
@@ -123,6 +135,11 @@ function initPhoneDemo() {
                     icon.style.animation = '';
                 }, 500);
             }
+
+            // Add a generated response to the chat
+            setTimeout(() => {
+                addGeneratedMessage(responses);
+            }, 300);
         });
     }
 
@@ -146,6 +163,62 @@ function initPhoneDemo() {
                 profileSelector.style.transform = 'scale(1)';
             }, 100);
         });
+    }
+
+    // Function to add generated message to chat
+    function addGeneratedMessage(responses) {
+        const appDemo = document.querySelector('.app-demo');
+        const keyboardArea = document.querySelector('.keyboard-area');
+
+        if (!appDemo || !keyboardArea) return;
+
+        // Get a random response
+        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+
+        // Create the new message bubble with iOS blue style
+        const messageBubble = document.createElement('div');
+        messageBubble.className = 'comment-bubble outgoing';
+        messageBubble.style.cssText = `
+            background: #007AFF;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 18px;
+            margin: 4px 12px;
+            max-width: 70%;
+            align-self: flex-end;
+            margin-left: auto;
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.3;
+            animation: slideInUp 0.3s ease;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            position: relative;
+        `;
+
+        const messageText = document.createElement('span');
+        messageText.className = 'comment-text';
+        messageText.textContent = randomResponse;
+        messageBubble.appendChild(messageText);
+
+        // Insert the message before the keyboard area
+        appDemo.insertBefore(messageBubble, keyboardArea);
+
+        // Scroll to show the new message if needed
+        const phoneScreen = document.querySelector('.phone-screen');
+        if (phoneScreen) {
+            setTimeout(() => {
+                phoneScreen.scrollTop = phoneScreen.scrollHeight;
+            }, 100);
+        }
+
+        // Remove oldest message if there are too many (keep it clean)
+        const allBubbles = appDemo.querySelectorAll('.comment-bubble.outgoing');
+        if (allBubbles.length > 3) {
+            allBubbles[0].style.animation = 'fadeOut 0.3s ease';
+            setTimeout(() => {
+                allBubbles[0].remove();
+            }, 300);
+        }
     }
 
     // Auto demo - pulse the generate button periodically
@@ -217,6 +290,40 @@ styleSheet.textContent = `
         30% { opacity: 1; transform: translateY(-50%) translateX(0); }
         70% { opacity: 1; transform: translateY(-50%) translateX(0); }
         100% { opacity: 0; transform: translateY(-50%) translateX(-10px); }
+    }
+
+    @keyframes slideInUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .app-demo {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow-y: auto;
     }
 `;
 document.head.appendChild(styleSheet);
