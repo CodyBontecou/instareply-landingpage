@@ -107,14 +107,14 @@ function initPhoneDemo() {
 
     // Array of possible responses
     const responses = [
-        "Thanks so much! 💕 It's from @fashionbrand - link in bio! ✨",
-        "Aww you're so sweet! 🥰 Check my latest haul video for details!",
-        "Thank you babe! Got it from my fave store - swipe up for the link! 💗",
-        "Omg thanks! 😍 All outfit details are in my LTK!",
-        "You're the best! 💖 It's tagged in the video - tap the shopping bag!",
-        "Love you! 🤗 Full outfit breakdown coming tomorrow!",
-        "Thanks hun! ✨ Use code CREATOR20 for a discount!",
-        "So glad you like it! 💕 Check my stories for the try-on haul!"
+        "Yes — green is available now. If you order today, it should arrive before next week.",
+        "Good question. The green option is in stock, and I can send the direct link if helpful.",
+        "We do. For an event next week, I would choose standard shipping only if your date is flexible.",
+        "Yes, it comes in green. I would order soon so you have time to try it on before the event.",
+        "Green is available. If you want, I can also point you to the closest matching accessory.",
+        "It does ship in green. Check the size notes before ordering because this style runs a little fitted.",
+        "Yes — green is one of the current colors. The product page has the latest shipping estimate.",
+        "We have green. I would confirm the delivery window at checkout for your exact location."
     ];
 
     // Generate button click animation and add message
@@ -389,7 +389,7 @@ function initTypingEffect() {
     const accentLine = document.querySelector('.title-line.accent');
     if (!accentLine) return;
 
-    const words = ['hundreds', 'thousands', 'comments', 'followers'];
+    const words = ['replies', 'comments', 'messages', 'customers'];
     let currentWord = 0;
     let currentChar = 0;
     let isDeleting = false;
